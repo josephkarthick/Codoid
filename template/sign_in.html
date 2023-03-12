@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>CODOID</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	 <link type="text/css" rel="stylesheet" href="{% static 'assets/fonts/font-awesome/css/font-awesome.min.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body id="top">
+<div class="page_loader"></div>
+
+<!-- Login 8 start -->
+<div class="login-8">
+    <div class="container">
+        <div class="row login-box">
+            <div class="col-lg-7 col-md-12 form-info">
+                <div class="form-section">
+                    <div class="logo clearfix">
+                        <a href="#">
+                            <img src="{% static 'img/codoid-logo.svg' %}" alt="logo">
+                        </a>
+                    </div>
+                    <h3>Sign Into Your Account</h3>
+					{%if messages%}
+						{%for messages in messages %}
+							{{ messages}}
+						{% endfor %}
+					{% endif %}	
+                    <div class="login-inner-form">
+                        <form action="#" method="POST">
+						{% csrf_token %}
+                            <div class="form-group form-box">
+                                <input type="text" name="username" class="form-control" placeholder="Email Address" aria-label="Email Address">
+                                <i class="flaticon-mail-2"></i>
+                            </div>
+                            <div class="form-group form-box">
+                                <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Password" aria-label="Password">
+                                <i class="flaticon-password"></i>
+                            </div>
+                            <div class="checkbox form-group form-box">
+                                <div class="form-check checkbox-theme">
+                                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn-md btn-theme w-100">Login</button>
+                            </div>
+                            <p class="text">Don't have an account?<a href="{% url 'signup'%}"> Register here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 bg-img">
+                <div class="info">
+                    <div class="btn-section clearfix">
+                        <a href="{% url 'signin' %}" class="link-btn active btn-1 default-bg">Login</a>
+                        <a href="{% url 'signup' %}" class="link-btn btn-1">Register</a>
+                    </div>
+                    <div class="info-text">
+                        <div class="waviy">
+                            <span style="--i:1">W</span>
+                            <span style="--i:2">e</span>
+                            <span style="--i:3">l</span>
+                            <span style="--i:4">c</span>
+                            <span style="--i:5">o</span>
+                            <span style="--i:6">m</span>
+                            <span style="--i:7">e</span>
+                            <span class="color-yellow" style="--i:8">2</span>
+                            <span style="--i:10">c</span>
+                            <span style="--i:10">o</span>
+                            <span style="--i:11">d</span>
+                            <span style="--i:12">o</span>
+                            <span style="--i:13">i</span>
+                            <span style="--i:13">d</span>
+                        </div>
+                        <p>Codoid was founded in 2012 by a group of like-minded, passionate test automation professionals. This group developed a guiding principle: to deliver an industry-leading test automation platform for Software Applications.
+						By firmly adhering to this principle, Codoid is proud to offer TRUE end-to-end, unattended automated testing of mission-critical business applications.</p>
+                    </div>
+                    <ul class="social-list">
+                        <li>
+                            <a href="#" class="facebook-bg">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter-bg">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="google-bg">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="linkedin-bg">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pinterest-bg">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login 8 end -->
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+
+
+</html>
